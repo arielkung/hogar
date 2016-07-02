@@ -44,6 +44,11 @@ gulp.task('buildJs', function () {
             .pipe(gulp.dest(gulp.publicPath + '/js'));
 });
 
+gulp.task('buildImg', function(){
+    return gulp.src(gulp.srcPath + '/assets/img/*.*')
+        .pipe(gulp.dest(gulp.publicPath + '/img'));
+});
+
 gulp.task('buildHtml', function () {
     gulp.src(gulp.srcPath + '/app/components/**/*.html')
             .pipe(flatten())

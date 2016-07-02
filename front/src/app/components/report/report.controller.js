@@ -48,6 +48,9 @@ angular.module('hogarApp').controller('ReportController', function($scope, $root
 	$scope.report = function (){
 		$rootScope.report.selectionCollection = selectionCollection;
 		$rootScope.report.needsCollection = needsCollection;
+
+        $state.go('report_create');
+
 	}
 
 	$scope.toggleNeed = function (need){

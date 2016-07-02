@@ -9,6 +9,7 @@ gulp.task('clean', function () {
         gulp.publicPath + '/*.html',
         gulp.publicPath + '/views/*.html',
         gulp.publicPath + '/css/*.css',
-        gulp.publicPath + '/js/*.js'
+        gulp.publicPath + '/js/*.js',
+        gulp.publicPath + '/img/*.*'
     ]);
 })
