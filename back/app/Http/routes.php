@@ -12,7 +12,7 @@
 */
 
 
-Route::post('/login', 'SessionController@login');
-Route::post('/logout', 'SessionController@logout');
+Route::get('/login', 'SessionController@login');
+Route::get('/logout', 'SessionController@logout');
 
 Route::resource('/report', 'ReportController');

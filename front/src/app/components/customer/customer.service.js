@@ -1,43 +1,21 @@
-angular.module('bivlioApp').factory('CustomerService', function (Customer,CustomerApi,$q) {
+angular.module('hogarApp').factory('CustomerService', function (Customer) {
 
-    var CustomerService = {};
+    var customer = Customer;
 
-    CustomerService.login = function(userInfo) {
-        var defer = $q.defer();
-        CustomerApi.makePublicRequest( '/login' , 'POST', {
-        }, userInfo, function( data ) {
-            defer.resolve(data);
-        }, function( data, status ) {
-            defer.reject(data);
-        });
+    var login = function (callback) {
+        Customer.logedIn = true;
+        callback();
+    }
 
-        return defer.promise;
-    };
+    var register = function (callback) {
+        Customer.logedIn = true;
+        callback();
+    }
 
-    CustomerService.register = function(userInfo) {
-        var defer = $q.defer();
-        CustomerApi.makePublicRequest( '/register' , 'POST', {
-        }, userInfo, function( data ) {
-            defer.resolve(data);
-        }, function( data, status ) {
-            defer.reject(data);
-        });
+    return {
+        login: login,
+        register : register,
+        customer: this.customer
+    }
 
-        return defer.promise;
-    };
-
-    CustomerService.changePassword = function(userInfo) {
-        var defer = $q.defer();
-        CustomerApi.makePublicRequest( '/register' , 'POST', {
-        }, userInfo, function( data ) {
-            defer.resolve(data);
-        }, function( data, status ) {
-            defer.reject(data);
-        });
-
-        return defer.promise;
-    };
-
-
-    return CustomerService;
-}); 
+})

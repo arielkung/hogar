@@ -1,34 +1,19 @@
-angular.module('bivlioApp').factory('Customer', function () {
-    var Customer = {
-        id: null,
-        email: null,
-        password: null,
-        username: null,
-        name: null,
-        nickname: null,
-        gender: null,
-        email: null,
-        country: null,
-        legajo: null,
-        institucion: null,
-        curso: null
-      };
+angular.module('hogarApp').factory('Customer', function(){
+  var user;
+  var password;
+  var password2;
+  var type;
 
-    Customer.getConfig = function() {
-        var config = {
-            headers: { },
-            URL: Config.customer.URL
-        };
-        return object;
-    }
+  var logedIn = false;
 
-    Customer.isLoginIn = function () {
-        //return (CustomerService.email) ? true : false;
-    }
+  return {
+    email : this.user,
+    password : this.password,
+    password2 : this.password2,
+    logedIn : this.logedIn,
+    type : 'customer'
+  }
 
-    Customer.isDocente = function () {
-        //return (CustomerService.email) ? true : false;
-    }
 
-    return Customer;
+
 })

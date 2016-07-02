@@ -40,7 +40,7 @@ gulp.task('buildJs', function () {
             .pipe(fileSort())
             .pipe(concat('app.js'))
             .pipe(insert.prepend("var env = '" + gulp.env + "';"))
-            .pipe(insert.append("angular.bootstrap(document, ['bivlioApp']);"))
+            .pipe(insert.append("angular.bootstrap(document, ['hogarApp']);"))
             .pipe(gulp.dest(gulp.publicPath + '/js'));
 });
 

@@ -16,8 +16,8 @@ class Person extends Migration
           $table->increments('id');
           $table->enum('gender', ['male', 'female']);
           $table->enum('age-range',['baby','child', 'adult', 'elder']);
-          $table->integer('')
-          $table->timestamps('report_id');
+          $table->integer('report_id')
+          $table->timestamps('');
       });
     }
 
