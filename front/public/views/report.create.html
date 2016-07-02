@@ -1,16 +1,44 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
-</html>
+<div id='address-header' style='width:100%'>
+Seleccionas las caracteristicas que correspondan:
+</div>
+<div style='width:100%;display:inline-flex'>
+	<div style='width:50%'>
+		<button ng-click="setGender('male')"  ng-class="{prueba : selection.gender=='male'}">Hombre</button>
+		<button ng-click="setGender('female')" ng-class="{prueba : selection.gender=='female'}">Mujer</button>
+	</div>
+	<div style='width:50%'>
+		<div ng-hide='selection.gender'>
+			Selecciona el genero
+		</div>
+		<div ng-show='selection.gender'>
+			<button ng-click="setAgeRange('elder')">Mayor</button>
+			<button ng-click="setAgeRange('adult')">Adulto</button>	
+			<button ng-click="setAgeRange('young')">Joven</button>
+			<button ng-click="setAgeRange('baby')">Bebe</button>
+			<button ng-click="setAgeRange('pregnant')">Embarazada</button>
+		</div>
+	</div>
+</div>
+
+====================================
+
+<div ng-repeat='sel in selectionCollection'>
+	{{sel.gender}}+{{sel.ageRange}}
+</div>
+
+====================================
+<div id='address-header' style='width:100%'>
+Necesidades idenfiticadas:
+</div>
+<div style='width:100%;display:inline-flex'>
+	<button ng-click="toggleNeed('elder')" ng-class="{prueba : needsCollection.elder}">Ropa</button>
+	<button ng-click="toggleNeed('shoes')" ng-class="{prueba : needsCollection.shoes}">Calzado</button>	
+	<button ng-click="toggleNeed('coat')" ng-class="{prueba : needsCollection.coat}">Frazada</button>
+	<button ng-click="toggleNeed('food')" ng-class="{prueba : needsCollection.food}j">Comida</button>
+</div>
+
+
+====================================
+
+{{needsCollection}}
+<button style="width:100%">Enviar</button>
