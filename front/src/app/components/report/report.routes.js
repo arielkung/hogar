@@ -10,4 +10,10 @@ angular.module('hogarApp').config(function ($stateProvider) {
                 templateUrl: 'views/report.create.html',
                 controller: 'ReportController'
             })
+            .state('report_success', {
+                url: '/reportar/success',
+                templateUrl: 'views/report.success.html',
+                controller: 'ReportController'
+            })
+
 });

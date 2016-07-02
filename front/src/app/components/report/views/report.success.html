@@ -1,0 +1,27 @@
+<div id='address-header' style='width:100%'>
+Gracias por su ayuda :)
+</div>
+<div id='address-header' style='width:100%'>
+{{report}}
+	<div ng-repeat="sel in report.selectionCollection">
+			{{sel.gender}}+{{sel.ageRange}}
+	</div>
+	+
+	<div ng-repeat="need in report.needsCollection">
+			{{need}}
+	</div>
+
+</div>
+
+====================================
+<div id='address-header' style='width:100%'>
+Datos utiles:
+</div>
+<div style='width:100%;display:inline-flex'>
+
+Aca vienen los datos utiles
+</div>
+
+<a ui-sref='report_customer_map'>
+	<button style="width:100%">Finalizar</button>
+</a>

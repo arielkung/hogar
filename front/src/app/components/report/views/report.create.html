@@ -3,8 +3,8 @@ Seleccionas las caracteristicas que correspondan:
 </div>
 <div style='width:100%;display:inline-flex'>
 	<div style='width:50%'>
-		<button ng-click="setGender('male')"  ng-class="{prueba : selection.gender=='male'}">Hombre</button>
-		<button ng-click="setGender('female')" ng-class="{prueba : selection.gender=='female'}">Mujer</button>
+		<button ng-click="setGender('male')"  ng-class="{'male-sel': selection.gender=='male',male : selection.gender!='male'}">Hombre</button>
+		<button ng-click="setGender('female')" ng-class="{'female-sel': selection.gender=='female',female : selection.gender!='female'}">Mujer</button>
 	</div>
 	<div style='width:50%'>
 		<div ng-hide='selection.gender'>
@@ -41,4 +41,4 @@ Necesidades idenfiticadas:
 ====================================
 
 {{needsCollection}}
-<button style="width:100%">Enviar</button>
+<button style="width:100%" ng-click="doReport()" >Enviar</button>

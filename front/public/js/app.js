@@ -2,90 +2,6 @@ var env = 'aa';var deps = ['ui.router', 'ngResource', 'ngMaterial', 'angular-sto
 
 angular.module('hogarApp', deps);
 
-angular.module('hogarApp').config(["$stateProvider", function ($stateProvider) {
-    $stateProvider
-            .state('report_customer_map', {
-                url: '/',
-                templateUrl: '/views/customer.map.html',
-                controller: 'ReportController'
-            })
-            .state('report_create', {
-                url: '/reportar',
-                templateUrl: 'views/report.create.html',
-                controller: 'ReportController'
-            })
-}]);
-
-angular.module('hogarApp').controller('ReportController', ["$scope", "$rootScope", "$state", function($scope, $rootScope, $state){
-	var selection = {
-		gender : '',
-		ageRange : ''
-	}
-
-	var selectionCollection = [];
-	var needsCollection = [];
-
-	if($rootScope.report == undefined){
-		$rootScope.report = {
-			position : '',
-			selectionCollection : [],
-			needsCollection : []
-		}
-	}
-
-	var position = "";
-
-	function cleanSelection(){
-		selection.gender = '';
-		selection.ageRange = '';
-	}
-
-	$scope.setGender = function(gender){
-		selection.gender = gender;
-	}
-
-	$scope.setAgeRange = function(ageRange){
-		selection.ageRange =  ageRange;
-	
-		if(selection.gender && selection.ageRange){
-			selectionCollection.push({
-				gender : selection.gender,
-				ageRange : selection.ageRange
-			});	
-		}
-		
-		cleanSelection();
-	}
-
-	$scope.newReport = function (){
-		position = '123,123.312.123';
-		$rootScope.report.position = position;
-        $state.go('report_create');
-	}
-
-	$scope.report = function (){
-		$rootScope.report.selectionCollection = selectionCollection;
-		$rootScope.report.needsCollection = needsCollection;
-
-        $state.go('report_create');
-
-	}
-
-	$scope.toggleNeed = function (need){
-		if(needsCollection[need]){
-			delete needsCollection[need];
-		}else{
-			needsCollection[need] = true;
-		}
-		console.log(needsCollection);
-	}
-
-	$scope.position = position;
-	$scope.report = $rootScope.report;
-	$scope.selection = selection;
-	$scope.selectionCollection = selectionCollection;
-	$scope.needsCollection = needsCollection;
-}]);
 angular.module('hogarApp').factory('CustomerService', ["Customer", function(Customer){
 
   var customer = Customer;
@@ -170,6 +86,100 @@ angular.module('hogarApp').controller('CustomerController', ["$scope", "$state",
     }
 }])
 
+angular.module('hogarApp').config(["$stateProvider", function ($stateProvider) {
+    $stateProvider
+            .state('report_customer_map', {
+                url: '/',
+                templateUrl: '/views/customer.map.html',
+                controller: 'ReportController'
+            })
+            .state('report_create', {
+                url: '/reportar',
+                templateUrl: 'views/report.create.html',
+                controller: 'ReportController'
+            })
+            .state('report_success', {
+                url: '/reportar/success',
+                templateUrl: 'views/report.success.html',
+                controller: 'ReportController'
+            })
+
+}]);
+
+angular.module('hogarApp').controller('ReportController', ["$scope", "$rootScope", "$state", function($scope, $rootScope, $state){
+	var selection = {
+		gender : '',
+		ageRange : ''
+	}
+
+	var selectionCollection = [];
+	var needsCollection = [];
+
+	if($rootScope.report == undefined){
+		$rootScope.report = {
+			position : '',
+			selectionCollection : [],
+			needsCollection : []
+		}
+	}
+
+	var position = "";
+
+	function cleanSelection(){
+		selection.gender = '';
+		selection.ageRange = '';
+	}
+
+	$scope.setGender = function(gender){
+		selection.gender = gender;
+	}
+
+	$scope.setAgeRange = function(ageRange){
+		selection.ageRange =  ageRange;
+	
+		if(selection.gender && selection.ageRange){
+			selectionCollection.push({
+				gender : selection.gender,
+				ageRange : selection.ageRange
+			});	
+		}
+		
+		cleanSelection();
+	}
+
+	$scope.newReport = function (){
+		position = '123,123.312.123';
+		$rootScope.report.position = position;
+        $state.go('report_create');
+	}
+
+	$scope.doReport = function (){
+		$rootScope.report.selectionCollection = selectionCollection;
+		$rootScope.report.needCollection = [];
+		['elder','shoes','coat','food'].forEach(function(el){
+			if(needsCollection[el]){
+				$rootScope.report.needsCollection.push(el);
+			}
+		});
+        $state.go('report_success');
+
+	}
+
+	$scope.toggleNeed = function (need){
+		if(needsCollection[need]){
+			delete needsCollection[need];
+		}else{
+			needsCollection[need] = true;
+		}
+		console.log(needsCollection);
+	}
+
+	$scope.position = position;
+	$scope.report = $rootScope.report;
+	$scope.selection = selection;
+	$scope.selectionCollection = selectionCollection;
+	$scope.needsCollection = needsCollection;
+}]);
 angular.module('hogarApp').config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/registrarme');
 }]);

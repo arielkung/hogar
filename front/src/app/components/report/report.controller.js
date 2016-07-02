@@ -45,11 +45,15 @@ angular.module('hogarApp').controller('ReportController', function($scope, $root
         $state.go('report_create');
 	}
 
-	$scope.report = function (){
+	$scope.doReport = function (){
 		$rootScope.report.selectionCollection = selectionCollection;
-		$rootScope.report.needsCollection = needsCollection;
-
-        $state.go('report_create');
+		$rootScope.report.needCollection = [];
+		['elder','shoes','coat','food'].forEach(function(el){
+			if(needsCollection[el]){
+				$rootScope.report.needsCollection.push(el);
+			}
+		});
+        $state.go('report_success');
 
 	}
 
