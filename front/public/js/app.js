@@ -16,25 +16,23 @@ angular.module('hogarApp').config(["$stateProvider", function ($stateProvider) {
             });
 }]);
 
-angular.module('hogarApp').factory('CustomerService', ["Customer", function (Customer) {
+angular.module('hogarApp').factory('CustomerService', ["Customer", function(Customer){
 
-    var customer = Customer;
+  var customer = Customer;
 
-    var login = function (callback) {
-        Customer.logedIn = true;
-        callback();
-    }
+  var login = function(callback){
+      Customer.logedIn = true;
+      callback();
+  }
 
-    var register = function (callback) {
-        Customer.logedIn = true;
-        callback();
-    }
+  var register = function(callback){
+    consol
+  }
 
-    return {
-        login: login,
-        register : register,
-        customer: this.customer
-    }
+  return {
+      login : login,
+      customer : this.customer
+  }
 
 }])
 
