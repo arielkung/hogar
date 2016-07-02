@@ -1,7 +1,17 @@
-<h1>Login</h1>
-
-<label for='user-email'/><input type='text' id='user-email' ng-model='customer.email'/>
-<label for='user-password'/><input type='password' id='user-password' ng-model='customer.password'/>
-
-<button ng-click='login()'>Iniciar Sesion</button>
-<a ui-sref='customer_register'>Registrarme</button>
+<h1 class="w3-container w3-teal">Login</h1>
+<div class="w3-row-padding">
+    <div class="w3-third">
+        <label for='user-email'/>
+        <input type='text' id='user-email' ng-model='customer.email' class="w3-input w3-border" placeholder="Email"/>
+    </div>
+    <div class="w3-third">
+        <label for='user-password'/>
+        <input type='password' id='user-password' ng-model='customer.password' class="w3-input w3-border" placeholder="Password"/>
+    </div>
+    <div class="w3-third">
+        <button class="hogarBtn hogarBtn_Orange" ng-click='login()'>Iniciar Sesion</button><br>
+        <a ui-sref='customer_register'>
+            <button class="hogarBtn hogarBtn_Gray">Registrarme</button>
+        </a>
+    </div>
+</div>

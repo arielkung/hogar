@@ -2,25 +2,41 @@ var env = 'aa';var deps = ['ui.router', 'ngResource', 'ngMaterial', 'angular-sto
 
 angular.module('hogarApp', deps);
 
+<<<<<<< HEAD
 angular.module('hogarApp').factory('CustomerService', ["Customer", function (Customer) {
+=======
+angular.module('hogarApp').config(["$stateProvider", function ($stateProvider) {
+    $stateProvider
+            .state('report_customer_map', {
+                url: '/',
+                templateUrl: '/views/customer.map.html',
+                controller: 'CustomerController'
+            })
+            .state('report_create', {
+                url: '/reportar',
+                templateUrl: 'views/report.create.html',
+                controller: 'ReportController'
+            });
+}]);
 
-    var customer = Customer;
+angular.module('hogarApp').factory('CustomerService', ["Customer", function(Customer){
+>>>>>>> 1860a25d677a4675c35a5ebfe841ad99c78af018
 
-    var login = function (callback) {
-        Customer.logedIn = true;
-        callback();
-    }
+  var customer = Customer;
 
-    var register = function (callback) {
-        Customer.logedIn = true;
-        callback();
-    }
+  var login = function(callback){
+      Customer.logedIn = true;
+      callback();
+  }
 
-    return {
-        login: login,
-        register : register,
-        customer: this.customer
-    }
+  var register = function(callback){
+    consol
+  }
+
+  return {
+      login : login,
+      customer : this.customer
+  }
 
 }])
 
