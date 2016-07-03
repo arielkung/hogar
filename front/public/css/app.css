@@ -70,7 +70,7 @@
   border-right: 2px solid #b2b2b2;
 }
 .personCollection {
-  height: 41px;
+  height: 90px;
   border-bottom: 2px solid #b2b2b2;
 }
 .personCollection div {
@@ -109,6 +109,19 @@
   font-family: 'Roboto', 'sans-serif';
   line-height: 30px;
   padding-left: 10px;
+}
+.needCollection .icon-need-sel {
+  width: 25%;
+}
+.needCollection .icon-pre-sel {
+  width: 25%;
+}
+.cuerpo {
+  min-height: 300px;
+}
+.PaddingTopBottom {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 /*!
