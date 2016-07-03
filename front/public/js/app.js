@@ -1,4 +1,4 @@
-var env = 'aa';var deps = ['ui.router', 'ngResource', 'ngMaterial', 'angular-storage','geolocation','gservice'];
+var env = 'aa';var deps = ['ui.router', 'ngResource', 'ngMaterial'];
 
 angular.module('hogarApp', deps);
 
@@ -22,79 +22,79 @@ angular.module('hogarApp').config(["$stateProvider", function ($stateProvider) {
 
 }]);
 
-angular.module('hogarApp').controller('ReportController', ["$scope", "$rootScope", "$state", "geolocation", "gservice", function($scope, $rootScope, $state,geolocation, gservice){
-	var selection = {
-		gender : '',
-		ageRange : ''
-	}
+angular.module('hogarApp').controller('ReportController', ["$scope", "$rootScope", "$state", function ($scope, $rootScope, $state) {
+    var selection = {
+        gender: '',
+        ageRange: ''
+    }
 
-	var selectionCollection = [];
-	var needsCollection = [];
+    var selectionCollection = [];
+    var needsCollection = [];
 
-	if($rootScope.report == undefined){
-		$rootScope.report = {
-			position : '',
-			selectionCollection : [],
-			needsCollection : []
-		}
-	}
+    if ($rootScope.report == undefined) {
+        $rootScope.report = {
+            position: '',
+            selectionCollection: [],
+            needsCollection: []
+        }
+    }
 
-	var position = "";
+    var position = "";
 
-	function cleanSelection(){
-		selection.gender = '';
-		selection.ageRange = '';
-	}
+    function cleanSelection() {
+        selection.gender = '';
+        selection.ageRange = '';
+    }
 
-	$scope.setGender = function(gender){
-		selection.gender = gender;
-	}
+    $scope.setGender = function (gender) {
+        selection.gender = gender;
+    }
 
-	$scope.setAgeRange = function(ageRange){
-		selection.ageRange =  ageRange;
-	
-		if(selection.gender && selection.ageRange){
-			selectionCollection.push({
-				gender : selection.gender,
-				ageRange : selection.ageRange
-			});	
-		}
-		
-		cleanSelection();
-	}
+    $scope.setAgeRange = function (ageRange) {
+        selection.ageRange = ageRange;
 
-	$scope.newReport = function (){
-		position = '123,123.312.123';
-		$rootScope.report.position = position;
+        if (selection.gender && selection.ageRange) {
+            selectionCollection.push({
+                gender: selection.gender,
+                ageRange: selection.ageRange
+            });
+        }
+
+        cleanSelection();
+    }
+
+    $scope.newReport = function () {
+        position = '123,123.312.123';
+        $rootScope.report.position = position;
         $state.go('report_create');
-	}
+    }
 
-	$scope.doReport = function (){
-		$rootScope.report.selectionCollection = selectionCollection;
-		$rootScope.report.needCollection = [];
-		['elder','shoes','coat','food'].forEach(function(el){
-			if(needsCollection[el]){
-				$rootScope.report.needsCollection.push(el);
-			}
-		});
+    $scope.doReport = function () {
+        $rootScope.report.selectionCollection = selectionCollection;
+        $rootScope.report.needCollection = [];
+        ['elder', 'shoes', 'coat', 'food'].forEach(function (el) {
+            if (needsCollection[el]) {
+                $rootScope.report.needsCollection.push(el);
+            }
+        });
         $state.go('report_success');
 
-	}
+    }
 
-	$scope.toggleNeed = function (need){
-		if(needsCollection[need]){
-			delete needsCollection[need];
-		}else{
-			needsCollection[need] = true;
-		}
-		console.log(needsCollection);
-	}
+    $scope.toggleNeed = function (need) {
+        if (needsCollection[need]) {
+            delete needsCollection[need];
+        } else {
+            needsCollection[need] = true;
+        }
+        console.log(needsCollection);
+    }
 
-	$scope.position = position;
-	$scope.report = $rootScope.report;
-	$scope.selection = selection;
-	$scope.selectionCollection = selectionCollection;
-	$scope.needsCollection = needsCollection;
+    $scope.position = position;
+    $scope.report = $rootScope.report;
+    $scope.selection = selection;
+    $scope.selectionCollection = selectionCollection;
+    $scope.needsCollection = needsCollection;
 }]);
 angular.module('hogarApp').factory('CustomerService', ["Customer", function(Customer){
 

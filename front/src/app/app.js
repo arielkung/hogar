@@ -1,3 +1,3 @@
-var deps = ['ui.router', 'ngResource', 'ngMaterial', 'angular-storage','geolocation','gservice'];
+var deps = ['ui.router', 'ngResource', 'ngMaterial'];
 
 angular.module('hogarApp', deps);

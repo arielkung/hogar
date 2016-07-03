@@ -1,40 +1,69 @@
 <div id='address-header' style='width:100%'>
-Seleccionas las caracteristicas que correspondan:
+    Seleccionas las caracteristicas que correspondan:
 </div>
 <div style='width:100%;display:inline-flex'>
-	<div style='width:50%'>
-		<a ng-click="setGender('male')"  ng-class="{'male-sel': selection.gender=='male',male : selection.gender!='male'}">Hombre</a>
-		<a ng-click="setGender('female')" ng-class="{'female-sel': selection.gender=='female',female : selection.gender!='female'}">Mujer</a>
-	</div>
-	<div style='width:50%'>
-		<div ng-hide='selection.gender'>
-			Selecciona el genero
-		</div>
-		<div ng-show='selection.gender'>
-			<button ng-click="setAgeRange('elder')">Mayor</button>
-			<button ng-click="setAgeRange('adult')">Adulto</button>
-			<button ng-click="setAgeRange('young')">Joven</button>
-			<button ng-click="setAgeRange('baby')">Bebe</button>
-			<button ng-click="setAgeRange('pregnant')">Embarazada</button>
-		</div>
-	</div>
+    <div style='width:50%'>
+        <a ng-click="setGender('male')" >
+            <div class='icon icon-male' ng-class="{'icon-male-sel': selection.gender == 'male','icon-pre-sel' : selection.gender != 'male'}"></div>
+            Hombre
+        </a>
+        <a ng-click="setGender('female')">
+            <div class='icon icon-female' ng-class="{'icon-female-sel': selection.gender == 'female','icon-pre-sel' : selection.gender != 'female'}"></div>
+            Mujer
+        </a>
+    </div>
+    <div style='width:50%'>
+        <div ng-hide='selection.gender'>
+            Selecciona el genero
+        </div>
+        <div ng-show='selection.gender'>
+            <a ng-click="setAgeRange('elder')" >
+                <div class='icon icon-elder icon-pre-sel'></div>
+                Mayor
+            </a>
+            <a ng-click="setAgeRange('adult')" >
+                <div class='icon icon-adult icon-pre-sel'></div>
+                Adulto
+            </a>
+            <a ng-click="setAgeRange('child')" >
+                <div class='icon icon-child icon-pre-sel'></div>
+                Chico
+            </a>
+            <a ng-click="setAgeRange('baby')" >
+                <div class='icon icon-baby icon-pre-sel'></div>
+                Bebe
+            </a>
+            <a ng-click="setAgeRange('pregnant')" >
+                <div class='icon icon-pregnant icon-pre-sel'></div>
+                Embarazada
+            </a>
+        </div>
+    </div>
 </div>
 
 ====================================
 
 <div ng-repeat='sel in selectionCollection'>
-	{{sel.gender}}+{{sel.ageRange}}
+    <div class="icon icon-{{sel.gender}}-sel icon-{{sel.ageRange}}"></div>
 </div>
 
 ====================================
 <div id='address-header' style='width:100%'>
-Necesidades idenfiticadas:
+    Necesidades idenfiticadas:
 </div>
 <div style='width:100%;display:inline-flex'>
-	<button ng-click="toggleNeed('elder')" ng-class="{prueba : needsCollection.elder}">Ropa</button>
-	<button ng-click="toggleNeed('shoes')" ng-class="{prueba : needsCollection.shoes}">Calzado</button>
-	<button ng-click="toggleNeed('coat')" ng-class="{prueba : needsCollection.coat}">Frazada</button>
-	<button ng-click="toggleNeed('food')" ng-class="{prueba : needsCollection.food}">Comida</button>
+    <button ng-click="toggleNeed('elder')" ng-class="{
+                prueba : needsCollection.elder
+            }">Ropa</button>
+    <button ng-click="toggleNeed('shoes')" ng-class="{
+                prueba : needsCollection.shoes
+            }">Calzado</button>
+    <button ng-click="toggleNeed('coat')" ng-class="{
+                prueba : needsCollection.coat
+            }">Frazada</button>
+    <button ng-click="toggleNeed('food')" ng-class="{
+                prueba : needsCollection.food
+            }">Comida</button>
 </div>
 
 
