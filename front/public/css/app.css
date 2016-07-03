@@ -123,6 +123,9 @@
   padding-top: 10px;
   padding-bottom: 10px;
 }
+.angular-google-map-container {
+  height: 400px;
+}
 
 /*!
  * Angular Material Design

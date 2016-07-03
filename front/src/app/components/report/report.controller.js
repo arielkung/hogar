@@ -66,6 +66,8 @@ angular.module('hogarApp').controller('ReportController', function ($scope, $roo
         console.log(needsCollection);
     }
 
+    $scope.map = { center: { latitude: -34.603527, longitude: -58.382279}, zoom: 9 };
+
     $scope.position = position;
     $scope.report = $rootScope.report;
     $scope.selection = selection;
