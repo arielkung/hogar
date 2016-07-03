@@ -8,7 +8,8 @@ gulp.task('serve', ['deploy'], function () {
     browserSync({
         server: {
             baseDir: gulp.publicPath
-        }
+        },
+        port : 8080
     });
 
     gulp.watch(['**/*.*'], {cwd: gulp.srcPath}, function () {
