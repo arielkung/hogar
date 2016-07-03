@@ -1,17 +1,17 @@
-<h1 class="w3-container w3-teal">Login</h1>
-<div class="w3-row-padding">
-    <div class="w3-third">
-        <label for='user-email'/>
-        <input type='text' id='user-email' ng-model='customer.email' class="w3-input w3-border" placeholder="Email"/>
-    </div>
-    <div class="w3-third">
-        <label for='user-password'/>
-        <input type='password' id='user-password' ng-model='customer.password' class="w3-input w3-border" placeholder="Password"/>
-    </div>
-    <div class="w3-third">
-        <button class="hogarBtn hogarBtn_Orange" ng-click='login()'>Iniciar Sesion</button><br>
-        <a ui-sref='customer_register'>
-            <button class="hogarBtn hogarBtn_Gray">Registrarme</button>
-        </a>
-    </div>
+<md-toolbar layout="row" class="md-nav-login" layout-align="center center" style="margin-bottom: 36px">
+  <h3 class="nav-title">Hogar</h3>
+</md-toolbar>
+
+<div flex layout="column">
+    <md-input-container>
+      <label>Email</label>
+      <input type="text" ng-model="customer.email" required>
+    </md-input-container>
+    <md-input-container>
+      <label>Contraseña</label>
+      <input type="text" ng-model="customer.password" required>
+    </md-input-container>
+    <a layout="column" layout-align="center end" layout-margin style="margin: 8px">Olvidé mi contraseña</a>
+    <md-button class="md-primary md-raised" ng-click='login()'>Iniciar sesión</md-button>
+    <md-button class="md-raised md-accent" ui-sref='customer_register'>Registrarme</md-button>
 </div>
