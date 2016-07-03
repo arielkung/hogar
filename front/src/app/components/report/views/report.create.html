@@ -4,12 +4,18 @@
 <div style='width:100%;display:inline-flex'>
     <div style='width:50%'>
         <a ng-click="setGender('male')" >
-            <div class='icon icon-male' ng-class="{'icon-male-sel': selection.gender == 'male','icon-pre-sel' : selection.gender != 'male'}"></div>
-            Hombre
+            <div class='icon icon-male' ng-class="{
+                    'icon-male-sel'
+                    : selection.gender == 'male', 'icon-pre-sel'
+                : selection.gender != 'male'}"></div>
+            
         </a>
         <a ng-click="setGender('female')">
-            <div class='icon icon-female' ng-class="{'icon-female-sel': selection.gender == 'female','icon-pre-sel' : selection.gender != 'female'}"></div>
-            Mujer
+            <div class='icon icon-female' ng-class="{
+                    'icon-female-sel'
+                    : selection.gender == 'female', 'icon-pre-sel'
+                : selection.gender != 'female'}"></div>
+            
         </a>
     </div>
     <div style='width:50%'>
@@ -52,18 +58,26 @@
     Necesidades idenfiticadas:
 </div>
 <div style='width:100%;display:inline-flex'>
-    <button ng-click="toggleNeed('elder')" ng-class="{
-                prueba : needsCollection.elder
-            }">Ropa</button>
-    <button ng-click="toggleNeed('shoes')" ng-class="{
-                prueba : needsCollection.shoes
-            }">Calzado</button>
-    <button ng-click="toggleNeed('coat')" ng-class="{
-                prueba : needsCollection.coat
-            }">Frazada</button>
-    <button ng-click="toggleNeed('food')" ng-class="{
-                prueba : needsCollection.food
-            }">Comida</button>
+    <a ng-click="toggleNeed('clothes')" ng-class="{
+                    'icon-need-sel' : needsCollection.clothes}" >
+        <div class='icon icon-clothes icon-pre-sel'></div>
+        Ropa
+    </a>
+    <a ng-click="toggleNeed('shoes')" ng-class="{
+                    'icon-need-sel' : needsCollection.shoes}">
+        <div class='icon icon-shoes icon-pre-sel'></div>
+        Calzado
+    </a>
+    <a ng-click="toggleNeed('coat')" ng-class="{
+                    'icon-need-sel' : needsCollection.coat}" >
+        <div class='icon icon-coat icon-pre-sel'></div>
+        Frazada
+    </a>
+    <a ng-click="toggleNeed('food')" ng-class="{
+                    'icon-need-sel' : needsCollection.food}">
+        <div class='icon icon-food icon-pre-sel'></div>
+        Comida
+    </a>
 </div>
 
 

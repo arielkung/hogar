@@ -1,27 +1,26 @@
 <div id='address-header' style='width:100%'>
-Gracias por su ayuda :)
+    Gracias por su ayuda :)
 </div>
 <div id='address-header' style='width:100%'>
-{{report}}
-	<div ng-repeat="sel in report.selectionCollection">
-			{{sel.gender}}+{{sel.ageRange}}
-	</div>
-	+
-	<div ng-repeat="need in report.needsCollection">
-			{{need}}
-	</div>
+    <div ng-repeat="sel in report.selectionCollection">
+        <div class="icon icon-{{sel.gender}}-sel icon-{{sel.ageRange}}"></div>
+    </div>
+    +
+    <div ng-repeat="need in report.needsCollection">
+        <div class='icon icon-{{need}} icon-need-sel'></div>
 
+    </div>
 </div>
 
 ====================================
 <div id='address-header' style='width:100%'>
-Datos utiles:
+    Datos utiles:
 </div>
 <div style='width:100%;display:inline-flex'>
 
-Aca vienen los datos utiles
+    Aca vienen los datos utiles
 </div>
 
 <a ui-sref='report_customer_map'>
-	<button style="width:100%">Finalizar</button>
+    <button style="width:100%">Finalizar</button>
 </a>

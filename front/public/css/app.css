@@ -1,3 +1,35 @@
+.hogarBtn {
+  border-radius: 3px;
+  width: 100%;
+  margin: 4px;
+  padding: 5px;
+  border: none;
+}
+.hogarBtn_Orange {
+  background-color: #ff9000;
+}
+.hogarBtn_Grey {
+  background-color: grey;
+}
+.hogarBtn_Red {
+  background-color: #e84e40;
+}
+.icon {
+  font-size: 40px;
+}
+.icon-pre-sel {
+  color: grey;
+}
+.icon-need-sel {
+  color: green;
+}
+.icon-male-sel {
+  color: darkblue;
+}
+.icon-female-sel {
+  color: red;
+}
+
 /*!
  * Angular Material Design
  * https://github.com/angular/material
@@ -23340,32 +23372,3 @@ md-tooltip {
 @media print {
   .hide-print:not(.show-print):not(.show) {
     display: none !important; } }
-
-.hogarBtn {
-  border-radius: 3px;
-  width: 100%;
-  margin: 4px;
-  padding: 5px;
-  border: none;
-}
-.hogarBtn_Orange {
-  background-color: #ff9000;
-}
-.hogarBtn_Grey {
-  background-color: grey;
-}
-.hogarBtn_Red {
-  background-color: #e84e40;
-}
-.icon {
-  font-size: 40px;
-}
-.icon-pre-sel {
-  color: grey;
-}
-.icon-male-sel {
-  color: darkblue;
-}
-.icon-female-sel {
-  color: red;
-}
