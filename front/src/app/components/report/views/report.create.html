@@ -3,8 +3,8 @@ Seleccionas las caracteristicas que correspondan:
 </div>
 <div style='width:100%;display:inline-flex'>
 	<div style='width:50%'>
-		<button ng-click="setGender('male')"  ng-class="{'male-sel': selection.gender=='male',male : selection.gender!='male'}">Hombre</button>
-		<button ng-click="setGender('female')" ng-class="{'female-sel': selection.gender=='female',female : selection.gender!='female'}">Mujer</button>
+		<a ng-click="setGender('male')"  ng-class="{'male-sel': selection.gender=='male',male : selection.gender!='male'}">Hombre</a>
+		<a ng-click="setGender('female')" ng-class="{'female-sel': selection.gender=='female',female : selection.gender!='female'}">Mujer</a>
 	</div>
 	<div style='width:50%'>
 		<div ng-hide='selection.gender'>
@@ -12,7 +12,7 @@ Seleccionas las caracteristicas que correspondan:
 		</div>
 		<div ng-show='selection.gender'>
 			<button ng-click="setAgeRange('elder')">Mayor</button>
-			<button ng-click="setAgeRange('adult')">Adulto</button>	
+			<button ng-click="setAgeRange('adult')">Adulto</button>
 			<button ng-click="setAgeRange('young')">Joven</button>
 			<button ng-click="setAgeRange('baby')">Bebe</button>
 			<button ng-click="setAgeRange('pregnant')">Embarazada</button>
@@ -32,7 +32,7 @@ Necesidades idenfiticadas:
 </div>
 <div style='width:100%;display:inline-flex'>
 	<button ng-click="toggleNeed('elder')" ng-class="{prueba : needsCollection.elder}">Ropa</button>
-	<button ng-click="toggleNeed('shoes')" ng-class="{prueba : needsCollection.shoes}">Calzado</button>	
+	<button ng-click="toggleNeed('shoes')" ng-class="{prueba : needsCollection.shoes}">Calzado</button>
 	<button ng-click="toggleNeed('coat')" ng-class="{prueba : needsCollection.coat}">Frazada</button>
 	<button ng-click="toggleNeed('food')" ng-class="{prueba : needsCollection.food}">Comida</button>
 </div>
