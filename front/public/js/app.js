@@ -1,7 +1,11 @@
 var env = 'aa';var deps = ['ui.router', 'ngResource', 'ngMaterial'];
 
-angular.module('hogarApp', deps);
-
+angular.module('hogarApp', deps)
+.config(["$mdThemingProvider", function($mdThemingProvider) {
+  $mdThemingProvider.theme('default')
+    .primaryPalette('red')
+    .accentPalette('orange');
+}]);
 angular.module('hogarApp').config(["$stateProvider", function ($stateProvider) {
     $stateProvider
             .state('report_customer_map', {
@@ -181,7 +185,7 @@ angular.module('hogarApp').controller('CustomerController', ["$scope", "$state",
 }])
 
 angular.module('hogarApp').config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/registrarme');
+    $urlRouterProvider.otherwise('/iniciar-sesion');
 }]);
 
 angular.module('hogarApp').run(["$httpBackend", "$http", function ($httpBackend, $http) {
