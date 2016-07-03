@@ -45,6 +45,7 @@
   font-weight: 400 !important;
   color: #101010 !important;
 }
+<<<<<<< HEAD
 #Gender {
   text-align: center;
 }
@@ -77,6 +78,35 @@
   display: inline-flex;
   border-bottom: 2px solid #b2b2b2;
   text-align: center;
+=======
+.success-header {
+  width: 100%;
+  background-color: #8bc34a;
+  padding: 20px 60px 15px;
+  font-size: 1.3em;
+  color: white;
+  font-weight: 700;
+}
+#floating-panel-bottom {
+  position: absolute;
+  top: 5px;
+  z-index: 5;
+  padding: 5px;
+  text-align: center;
+  font-family: 'Roboto', 'sans-serif';
+  line-height: 30px;
+  padding-left: 10px;
+}
+#floating-panel {
+  position: absolute;
+  top: 5px;
+  z-index: 5;
+  padding: 5px;
+  text-align: center;
+  font-family: 'Roboto', 'sans-serif';
+  line-height: 30px;
+  padding-left: 10px;
+>>>>>>> 77e5bc3c55dd19070064967d9af8b10004bb2052
 }
 
 /*!
