@@ -6,16 +6,16 @@
         <a ng-click="setGender('male')" >
             <div class='icon icon-male' ng-class="{
                     'icon-male-sel'
-                    : selection.gender == 'male', 'icon-pre-sel'
-                : selection.gender != 'male'}"></div>
-            
+                            : selection.gender == 'male', 'icon-pre-sel'
+                            : selection.gender != 'male'}"></div>
+
         </a>
         <a ng-click="setGender('female')">
             <div class='icon icon-female' ng-class="{
                     'icon-female-sel'
-                    : selection.gender == 'female', 'icon-pre-sel'
-                : selection.gender != 'female'}"></div>
-            
+                            : selection.gender == 'female', 'icon-pre-sel'
+                            : selection.gender != 'female'}"></div>
+
         </a>
     </div>
     <div style='width:50%'>
@@ -23,24 +23,24 @@
             Selecciona el genero
         </div>
         <div ng-show='selection.gender'>
-            <a ng-click="setAgeRange('elder')" >
-                <div class='icon icon-elder icon-pre-sel'></div>
+            <a ng-click="setAgeRange('elder')" class='icon-pre-sel'>
+                <div class='icon icon-elder'></div>
                 Mayor
             </a>
-            <a ng-click="setAgeRange('adult')" >
-                <div class='icon icon-adult icon-pre-sel'></div>
+            <a ng-click="setAgeRange('adult')" class='icon-pre-sel'>
+                <div class='icon icon-adult'></div>
                 Adulto
             </a>
-            <a ng-click="setAgeRange('child')" >
-                <div class='icon icon-child icon-pre-sel'></div>
+            <a ng-click="setAgeRange('child')" class='icon-pre-sel' >
+                <div class='icon icon-child'></div>
                 Chico
             </a>
-            <a ng-click="setAgeRange('baby')" >
-                <div class='icon icon-baby icon-pre-sel'></div>
+            <a ng-click="setAgeRange('baby')" class="icon-pre-sel">
+                <div class='icon icon-baby'></div>
                 Bebe
             </a>
-            <a ng-click="setAgeRange('pregnant')" >
-                <div class='icon icon-pregnant icon-pre-sel'></div>
+            <a ng-click="setAgeRange('pregnant')" class="icon-pre-sel">
+                <div class='icon icon-pregnant'></div>
                 Embarazada
             </a>
         </div>
@@ -59,29 +59,27 @@
 </div>
 <div style='width:100%;display:inline-flex'>
     <a ng-click="toggleNeed('clothes')" ng-class="{
-                    'icon-need-sel' : needsCollection.clothes}" >
-        <div class='icon icon-clothes icon-pre-sel'></div>
+            'icon-need-sel': needsCollection.clothes, 'icon-pre-sel' : !needsCollection.clothes}" >
+        <div class='icon icon-clothes'></div>
         Ropa
     </a>
     <a ng-click="toggleNeed('shoes')" ng-class="{
-                    'icon-need-sel' : needsCollection.shoes}">
-        <div class='icon icon-shoes icon-pre-sel'></div>
+            'icon-need-sel':needsCollection.shoes, 'icon-pre-sel' : !needsCollection.shoes}">
+        <div class='icon icon-shoes'></div>
         Calzado
     </a>
     <a ng-click="toggleNeed('coat')" ng-class="{
-                    'icon-need-sel' : needsCollection.coat}" >
-        <div class='icon icon-coat icon-pre-sel'></div>
+            'icon-need-sel':needsCollection.coat, 'icon-pre-sel' : !needsCollection.coat}" >
+        <div class='icon icon-coat'></div>
         Frazada
     </a>
     <a ng-click="toggleNeed('food')" ng-class="{
-                    'icon-need-sel' : needsCollection.food}">
-        <div class='icon icon-food icon-pre-sel'></div>
+            'icon-need-sel':needsCollection.food, 'icon-pre-sel' : !needsCollection.food}">
+        <div class='icon icon-food'></div>
         Comida
     </a>
 </div>
 
 
 ====================================
-
-{{needsCollection}}
 <button style="width:100%" ng-click="doReport()" >Enviar</button>
