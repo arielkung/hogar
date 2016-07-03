@@ -10,6 +10,7 @@
     "angular-material": "^1.0.8",
     "angular-mocks": "^1.5.5",
     "angular-resource": "^1.5.5",
-    "a0-angular-storage": "^0.0.15"
+    "a0-angular-storage": "^0.0.15",
+    "angularjs-geolocation": "^0.1.1"
   }
 }

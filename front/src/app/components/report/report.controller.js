@@ -1,4 +1,4 @@
-angular.module('hogarApp').controller('ReportController', function($scope, $rootScope, $state){
+angular.module('hogarApp').controller('ReportController', function($scope, $rootScope, $state,geolocation, gservice){
 	var selection = {
 		gender : '',
 		ageRange : ''
